@@ -27,7 +27,7 @@ export default function Home() {
 
         {/* Name */}
         <div className="space-y-2">
-          <p className="text-2xl md:text-3xl text-gray-700 font-light">I'm</p>
+          <p className="text-2xl md:text-3xl text-gray-700 font-light">I&apos;m</p>
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 relative">
             <span className="relative z-10">Kota Ishikuro</span>
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-cyan-400/20 to-yellow-400/20 blur-lg -z-10 scale-110"></div>
