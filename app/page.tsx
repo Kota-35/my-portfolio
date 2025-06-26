@@ -68,7 +68,7 @@ export default function Home() {
           </Link>
 
           {/* GitHub Button */}
-          <Link href="https://github.com/kotaishikuro" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/Kota-35" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="
