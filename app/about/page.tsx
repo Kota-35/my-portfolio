@@ -44,44 +44,54 @@ const AboutPage: React.FC = () => {
           {/* 技術スキル */}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-2xl">
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-6">
                 <FaCode className="text-2xl text-pink-600 mr-3" />
                 <h3 className="text-xl font-semibold text-gray-800">
                   Technical Skills
                 </h3>
               </div>
-              <ul className="text-gray-700 space-y-3 text-left">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">Python + FastAPI:</span> 
-                  <span className="ml-2">サーバー構築、BFF開発</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">TypeScript + Next.js:</span> 
-                  <span className="ml-2">フロントエンド開発</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">Rust:</span> 
-                  <span className="ml-2">APIサーバー開発、Google API連携</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">SQL:</span> 
-                  <span className="ml-2">データ加工、ETL処理</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">GraphQL:</span> 
-                  <span className="ml-2">Hono.js、クエリ言語</span>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                  <span className="text-pink-600 font-semibold">NoSQL:</span> 
-                  <span className="ml-2">Firestore操作</span>
-                </li>
-              </ul>
+              <div className="space-y-4 text-left">
+                {/* 言語 */}
+                <div>
+                  <h4 className="text-sm font-semibold text-pink-600 uppercase tracking-wider mb-2">Languages</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                    <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">TypeScript</span>
+                    <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Rust</span>
+                    <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">SQL</span>
+                  </div>
+                </div>
+
+                {/* フレームワーク */}
+                <div>
+                  <h4 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">Frameworks</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">FastAPI</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Next.js</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Hono.js</span>
+                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Actix-web</span>
+                  </div>
+                </div>
+
+                {/* データベース */}
+                <div>
+                  <h4 className="text-sm font-semibold text-green-600 uppercase tracking-wider mb-2">Database</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">BigQuery</span>
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Firestore</span>
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                  </div>
+                </div>
+
+                {/* その他技術 */}
+                <div>
+                  <h4 className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-2">Others</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">GraphQL</span>
+                    <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">ETL</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-2xl">
@@ -94,28 +104,28 @@ const AboutPage: React.FC = () => {
               <ul className="text-gray-700 space-y-3 text-left">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                  <span className="text-cyan-600 font-semibold">REHATCH:</span> 
-                  <span className="ml-2">1年3ヶ月インターン</span>
+                  <span className="text-cyan-600 font-semibold">長期インターン:</span> 
+                  <span className="ml-2">2024年3月〜現在</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                  <span className="text-cyan-600 font-semibold">ダッシュボードONE:</span> 
-                  <span className="ml-2">データ分析・構築</span>
+                  <span className="text-cyan-600 font-semibold">データ分析・分析基盤構築:</span> 
+                  <span className="ml-2">SQL、BIツール活用</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                  <span className="text-cyan-600 font-semibold">Leaplace:</span> 
-                  <span className="ml-2">AI対話機能BFF開発</span>
+                  <span className="text-cyan-600 font-semibold">SaaS開発:</span> 
+                  <span className="ml-2">分析ツールのフロント・バックエンド構築</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                  <span className="text-cyan-600 font-semibold">業務効率化:</span> 
-                  <span className="ml-2">Slack自動化</span>
+                  <span className="text-cyan-600 font-semibold">AI機能開発:</span> 
+                  <span className="ml-2">チャット機能のBE構築</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></span>
-                  <span className="text-cyan-600 font-semibold">データ連携:</span> 
-                  <span className="ml-2">ETL・API開発</span>
+                  <span className="text-cyan-600 font-semibold">業務効率化・API開発:</span> 
+                  <span className="ml-2">データ連携、自動化システム</span>
                 </li>
               </ul>
             </div>
@@ -261,9 +271,11 @@ const AboutPage: React.FC = () => {
               Go Back Home
             </button>
           </Link>
-          <button className="px-10 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-gray-500 hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
-            Watch My Works
-          </button>
+          <Link href="/works">
+            <button className="px-10 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-gray-500 hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+              Watch My Works
+            </button>
+          </Link>
         </div>
       </div>
     </PageLayout>
