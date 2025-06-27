@@ -1,6 +1,7 @@
 import type React from "react"
 import { notFound } from "next/navigation"
 import PageLayout from "../../components/PageLayout"
+import DiagramViewer from "../../components/DiagramViewer"
 import Link from "next/link"
 import { getProjectBySlug, getAllProjects } from "../data"
 import { 
@@ -116,12 +117,15 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                 <span className="font-medium">期間:</span>
                 <span>{project.details.duration}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="font-medium">役割:</span>
-                <span>{project.details.role}</span>
-              </div>
+              {project.details.role && (
+                <div className="flex justify-between">
+                  <span className="font-medium">役割:</span>
+                  <span>{project.details.role}</span>
+                </div>
+              )}
             </div>
           </div>
+
 
           {/* リンク */}
           {project.links && (
@@ -155,6 +159,11 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
           )}
         </div>
 
+          {/* 図表・資料 */}
+          {project.diagrams && (project.diagrams.architecture || project.diagrams.timeline) && (
+            <DiagramViewer diagrams={project.diagrams} />
+          )}
+
         {/* 詳細コンテンツ */}
         <div className="space-y-10">
           {/* 概要 */}
@@ -165,55 +174,84 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
             </p>
           </div>
 
-          {/* 課題・解決策・結果 */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* 課題 */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
-              <div className="flex items-center mb-6">
-                <FaCog className="text-2xl text-red-600 mr-3" />
-                <h3 className="text-xl font-semibold text-gray-800">課題</h3>
+          {/* コード特徴・工夫点 */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">実装の特徴・工夫点</h2>
+            
+            {project.details.codeFeatures?.map((feature, index) => (
+              <div key={index} className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center">
+                    <FaCode className="text-2xl text-blue-600 mr-3" />
+                    <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
+                  </div>
+                  {feature.githubLink && (
+                    <a 
+                      href={feature.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center px-3 py-1 bg-gray-800 text-white text-sm rounded-lg hover:bg-gray-900 transition-colors"
+                    >
+                      <FaGithub className="mr-2" />
+                      Code
+                    </a>
+                  )}
+                </div>
+                
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {feature.description}
+                </p>
+                
+                {feature.codeSnippet && (
+                  <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                    <pre className="text-green-400 text-sm">
+                      <code>{feature.codeSnippet}</code>
+                    </pre>
+                  </div>
+                )}
               </div>
-              <ul className="space-y-3">
-                {project.details.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <span className="flex-shrink-0 w-2 h-2 bg-red-400 rounded-full mt-2 mr-3"></span>
-                    <span className="text-sm leading-relaxed">{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
+          </div>
 
-            {/* 解決策 */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
-              <div className="flex items-center mb-6">
-                <FaTools className="text-2xl text-blue-600 mr-3" />
-                <h3 className="text-xl font-semibold text-gray-800">解決策</h3>
-              </div>
-              <ul className="space-y-3">
-                {project.details.solutions.map((solution, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <span className="flex-shrink-0 w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3"></span>
-                    <span className="text-sm leading-relaxed">{solution}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* 結果 */}
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
-              <div className="flex items-center mb-6">
-                <FaTrophy className="text-2xl text-green-600 mr-3" />
-                <h3 className="text-xl font-semibold text-gray-800">成果</h3>
+
+          {/* 主要実装・技術ハイライト */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* 主要実装 */}
+            {project.details.keyImplementations && project.details.keyImplementations.length > 0 && (
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
+                <div className="flex items-center mb-6">
+                  <FaTools className="text-2xl text-blue-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-800">主要実装</h3>
+                </div>
+                <ul className="space-y-3">
+                  {project.details.keyImplementations.map((implementation, index) => (
+                    <li key={index} className="flex items-start text-gray-700">
+                      <span className="flex-shrink-0 w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3"></span>
+                      <span className="text-sm leading-relaxed">{implementation}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-3">
-                {project.details.results.map((result, index) => (
-                  <li key={index} className="flex items-start text-gray-700">
-                    <FaCheckCircle className="flex-shrink-0 text-green-500 mt-1 mr-3" />
-                    <span className="text-sm leading-relaxed">{result}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            )}
+
+            {/* 技術ハイライト */}
+            {project.details.techHighlights && project.details.techHighlights.length > 0 && (
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-gray-200/50 shadow-xl">
+                <div className="flex items-center mb-6">
+                  <FaCog className="text-2xl text-green-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-800">技術ハイライト</h3>
+                </div>
+                <ul className="space-y-3">
+                  {project.details.techHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start text-gray-700">
+                      <FaCheckCircle className="flex-shrink-0 text-green-500 mt-1 mr-3" />
+                      <span className="text-sm leading-relaxed">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
           {/* 技術スタック */}
@@ -227,6 +265,8 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
               ))}
             </div>
           </div>
+
+
         </div>
 
         {/* ナビゲーション */}

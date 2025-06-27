@@ -131,53 +131,6 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          {/* プロジェクト経験 */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 border border-gray-200/50 shadow-2xl">
-            <div className="flex items-center justify-center mb-6">
-              <FaRocket className="text-3xl text-yellow-600 mr-3" />
-              <h3 className="text-2xl font-semibold text-gray-800">
-                Key Projects
-              </h3>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
-                <div className="flex items-center mb-3">
-                  <FaChartLine className="text-2xl text-yellow-600 mr-3" />
-                  <h4 className="text-lg font-semibold text-yellow-800">
-                    ダッシュボードONE構築
-                  </h4>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Google Looker StudioとオリジナルONEの両方を開発。広告データとGA4データを
-                  trocco（ETL）で取得し、SQLで加工。フルスタック開発を経験。
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
-                <div className="flex items-center mb-3">
-                  <FaRobot className="text-2xl text-blue-600 mr-3" />
-                  <h4 className="text-lg font-semibold text-blue-800">
-                    Leaplace AI対話機能BFF
-                  </h4>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  DIFYとLeaplaceを仲介するBFFをPython FastAPI + Pydanticで構築。
-                  FirestoreでのNoSQL操作、要件定義から実装まで一貫して担当。
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
-                <div className="flex items-center mb-3">
-                  <FaDatabase className="text-2xl text-green-600 mr-3" />
-                  <h4 className="text-lg font-semibold text-green-800">
-                    業務効率化ツール
-                  </h4>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Slack返信リマインド機能をPythonで実装。社外チャンネルの3時間以内
-                  未返信を自動検知し、担当者にリマインド送信。
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* 経歴マップ */}
           <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 border border-gray-200/50 shadow-2xl">
