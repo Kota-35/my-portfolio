@@ -9,10 +9,7 @@ import {
   FaSchool, 
   FaFutbol, 
   FaRocket,
-  FaCode,
-  FaDatabase,
-  FaChartLine,
-  FaRobot
+  FaCode
 } from "react-icons/fa"
 
 const AboutPage: React.FC = () => {

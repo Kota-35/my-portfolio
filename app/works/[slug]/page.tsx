@@ -16,7 +16,6 @@ import {
   FaArrowLeft,
   FaCheckCircle,
   FaCog,
-  FaTrophy,
   FaTools
 } from "react-icons/fa"
 

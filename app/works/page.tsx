@@ -9,8 +9,6 @@ import {
   FaDatabase,
   FaChartLine,
   FaRobot,
-  FaGithub,
-  FaExternalLinkAlt,
   FaLaptopCode,
   FaCloud,
   FaMobile
