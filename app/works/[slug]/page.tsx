@@ -18,6 +18,8 @@ import {
   FaCog,
   FaTools
 } from "react-icons/fa"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 // アイコンマッピング
 const iconMap = {
@@ -202,10 +204,21 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                 </p>
                 
                 {feature.codeSnippet && (
-                  <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                    <pre className="text-green-400 text-sm">
-                      <code>{feature.codeSnippet}</code>
-                    </pre>
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <SyntaxHighlighter
+                      language={feature.language || "typescript"}
+                      style={vscDarkPlus}
+                      customStyle={{
+                        margin: 0,
+                        padding: '1rem',
+                        fontSize: '0.875rem',
+                        lineHeight: '1.5',
+                      }}
+                      showLineNumbers={true}
+                      wrapLines={true}
+                    >
+                      {feature.codeSnippet}
+                    </SyntaxHighlighter>
                   </div>
                 )}
               </div>

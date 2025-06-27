@@ -12,6 +12,7 @@ export interface Project {
       title: string
       description: string
       codeSnippet?: string
+      language?: string
       githubLink?: string
     }[]
     keyImplementations: string[]
@@ -110,28 +111,15 @@ export const projects: Project[] = [
       overview: "社外とのコミュニケーションの質向上を目的とした、Slack自動リマインドシステムの開発プロジェクトです。重要な顧客対応の見落としを防ぐことができました。",
       codeFeatures: [
         {
-          title: "Slack APIを活用したリアルタイムメッセージ監視",
-          description: "WebSocketを使用してSlackのリアルタイムメッセージを監視し、未返信メッセージを検知するシステムです。",
-          githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/main/src/slack_monitor.py#L25-L45"
+          title: "社内・社外メンバーをteam情報で自動判定",
+          description: "スレッド内の時系列を考慮した返信有無の判定",
+          codeSnippet: `has_reply = any(
+    message.user_team is None and message.team == env.slack_team_id
+    for message in target_messages
+)`,
+          language: "python",
+          githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/e4c37d9e35a5c689e04263ea35ff414818aaac10/src/api/endpoint/tasks/check.py#L44"
         },
-        {
-          title: "非同期処理による効率的なメッセージ処理",
-          description: "asyncioを活用して大量のメッセージを並行処理し、パフォーマンスを最適化しています。",
-          codeSnippet: `async def process_messages(self, messages):
-    tasks = [self.check_response_time(msg) for msg in messages]
-    await asyncio.gather(*tasks)`,
-          githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/main/src/message_processor.py#L15-L25"
-        },
-        {
-          title: "チャンネル分類の自動判定ロジック",
-          description: "正規表現とキーワード分析により、社外チャンネルを自動で識別する機能を実装しました。",
-          githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/main/src/channel_classifier.py#L10-L30"
-        },
-        {
-          title: "Cloud Schedulerとの連携設計",
-          description: "Google Cloud Schedulerと連携して定期実行を実現し、リマインド機能を自動化しています。",
-          githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/main/main.py#L5-L20"
-        }
       ],
       keyImplementations: [
         "Slack APIを活用したリアルタイムメッセージ監視システム構築",
