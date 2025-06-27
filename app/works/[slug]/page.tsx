@@ -137,10 +137,10 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                     href={project.links.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+                    className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-xl hover:from-gray-700 hover:to-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full max-w-xs mx-auto"
                   >
-                    <FaGithub className="mr-3" />
-                    GitHub Repository
+                    <FaGithub className="mr-3 text-lg group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="font-medium">GitHub Repository</span>
                   </a>
                 )}
                 {project.links.demo && (
@@ -148,10 +148,10 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                     href={project.links.demo} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className={`flex items-center px-4 py-3 bg-gradient-to-r ${gradientColor} text-white rounded-lg hover:opacity-90 transition-opacity`}
+                    className={`group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r ${gradientColor} text-white rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full max-w-xs mx-auto`}
                   >
-                    <FaExternalLinkAlt className="mr-3" />
-                    Live Demo
+                    <FaExternalLinkAlt className="mr-3 text-lg group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="font-medium">Live Demo</span>
                   </a>
                 )}
               </div>
