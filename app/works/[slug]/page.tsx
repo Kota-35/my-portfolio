@@ -237,7 +237,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                   <h3 className="text-xl font-semibold text-gray-800">主要実装</h3>
                 </div>
                 <ul className="space-y-3">
-                  {project.details.keyImplementations.map((implementation, index) => (
+                  {project.details.keyImplementations?.map((implementation, index) => (
                     <li key={index} className="flex items-start text-gray-700">
                       <span className="flex-shrink-0 w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3"></span>
                       <span className="text-sm leading-relaxed">{implementation}</span>
@@ -255,7 +255,7 @@ const ProjectDetailPage: React.FC<ProjectDetailPageProps> = async ({ params }) =
                   <h3 className="text-xl font-semibold text-gray-800">技術ハイライト</h3>
                 </div>
                 <ul className="space-y-3">
-                  {project.details.techHighlights.map((highlight, index) => (
+                  {project.details.techHighlights?.map((highlight, index) => (
                     <li key={index} className="flex items-start text-gray-700">
                       <FaCheckCircle className="flex-shrink-0 text-green-500 mt-1 mr-3" />
                       <span className="text-sm leading-relaxed">{highlight}</span>

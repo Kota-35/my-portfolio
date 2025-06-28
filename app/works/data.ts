@@ -15,8 +15,8 @@ export interface Project {
       language?: string
       githubLink?: string
     }[]
-    keyImplementations: string[]
-    techHighlights: string[]
+    keyImplementations?: string[]
+    techHighlights?: string[]
     technologies: string[]
     duration: string
     role?: string
@@ -121,18 +121,18 @@ export const projects: Project[] = [
           githubLink: "https://github.com/Kota-35/slack-response-reminder/blob/e4c37d9e35a5c689e04263ea35ff414818aaac10/src/api/endpoint/tasks/check.py#L44"
         },
       ],
-      keyImplementations: [
-        "Slack APIを活用したリアルタイムメッセージ監視システム構築",
-        "Pythonによる非同期処理とスケジューリング機能実装",
-        "チャンネル属性の自動判別アルゴリズム開発",
-        "ログ機能とエラーハンドリングの充実化"
-      ],
-      techHighlights: [
-        "Slack APIの活用",
-        "Pythonの活用",
-        "チャンネル属性の自動判別",
-        "ログ機能とエラーハンドリングの充実化"
-      ],
+      // keyImplementations: [
+      //   "Slack APIを活用したリアルタイムメッセージ監視システム構築",
+      //   "Pythonによる非同期処理とスケジューリング機能実装",
+      //   "チャンネル属性の自動判別アルゴリズム開発",
+      //   "ログ機能とエラーハンドリングの充実化"
+      // ],
+      // techHighlights: [
+      //   "Slack APIの活用",
+      //   "Pythonの活用",
+      //   "チャンネル属性の自動判別",
+      //   "ログ機能とエラーハンドリングの充実化"
+      // ],
       technologies: ["Python", "FastAPI", "Slack API", "Docker", "Cloud Run", "Cloud Tasks", "Cloud Scheduler", "Notion API"],
       duration: "2週間",
     },

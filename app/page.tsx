@@ -3,7 +3,7 @@
 import type React from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import Image from "next/image"
+import { FaGithub } from "react-icons/fa"
 import PageLayout from "./components/PageLayout"
 
 export default function Home() {
@@ -67,6 +67,39 @@ export default function Home() {
             </Button>
           </Link>
 
+          {/* My Works Button */}
+          <Link href="/works">
+            <Button
+              size="lg"
+              className="
+                bg-gradient-to-r 
+                from-purple-500 
+                via-blue-400 
+                to-green-400
+                text-white 
+                border-2 
+                border-transparent 
+                hover:border-white
+                hover:shadow-2xl
+                px-8 
+                py-4 
+                text-lg 
+                font-medium 
+                rounded-full
+                shadow-lg
+                hover:shadow-xl
+                transition-all
+                duration-300
+                relative
+                overflow-hidden
+                group
+              "
+            >
+              <span className="relative z-10">My Works</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-blue-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Button>
+          </Link>
+
           {/* GitHub Button */}
           <Link href="https://github.com/Kota-35" target="_blank" rel="noopener noreferrer">
             <Button
@@ -95,13 +128,7 @@ export default function Home() {
                 gap-3
               "
             >
-              <Image 
-                src="/github.svg" 
-                alt="GitHub" 
-                width={20} 
-                height={20}
-                className="relative z-10 filter invert"
-              />
+              <FaGithub className="relative z-10 text-xl" />
               <span className="relative z-10">GitHub</span>
               <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-cyan-400/10 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>

@@ -94,7 +94,7 @@ const WorksPage: React.FC = () => {
         </div>
 
         {/* 技術スタック */}
-        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 border border-gray-200/50 shadow-2xl">
+        {/* <div className="bg-white/90 backdrop-blur-md rounded-3xl p-10 border border-gray-200/50 shadow-2xl">
           <div className="flex items-center justify-center mb-8">
             <FaCloud className="text-3xl text-indigo-600 mr-3" />
             <h3 className="text-2xl font-semibold text-gray-800">
@@ -135,7 +135,7 @@ const WorksPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* ナビゲーションボタン */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
