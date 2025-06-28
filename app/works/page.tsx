@@ -10,7 +10,6 @@ import {
   FaChartLine,
   FaRobot,
   FaLaptopCode,
-  FaCloud,
   FaMobile
 } from "react-icons/fa"
 

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { FaSitemap, FaClock } from 'react-icons/fa'
 
 interface DiagramViewerProps {
@@ -28,12 +29,19 @@ const DiagramViewer: React.FC<DiagramViewerProps> = ({ diagrams }) => {
               <h3 className="text-xl font-semibold text-gray-800">アーキテクチャ図</h3>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <img 
-                src={diagrams.architecture} 
-                alt="アーキテクチャ図" 
-                className="w-full h-auto rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              <div 
+                className="relative w-full h-auto rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                 onClick={() => handleImageClick(diagrams.architecture!)}
-              />
+              >
+                <Image
+                  src={diagrams.architecture}
+                  alt="アーキテクチャ図"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                  unoptimized={true}
+                />
+              </div>
             </div>
             <p className="text-sm text-gray-600 mt-2">
               クリックすると新しいタブで開きます
@@ -49,12 +57,19 @@ const DiagramViewer: React.FC<DiagramViewerProps> = ({ diagrams }) => {
               <h3 className="text-xl font-semibold text-gray-800">タイムライン図</h3>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-              <img 
-                src={diagrams.timeline} 
-                alt="タイムライン図" 
-                className="w-full h-auto rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              <div 
+                className="relative w-full h-auto rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                 onClick={() => handleImageClick(diagrams.timeline!)}
-              />
+              >
+                <Image
+                  src={diagrams.timeline}
+                  alt="タイムライン図"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                  unoptimized={true}
+                />
+              </div>
             </div>
             <p className="text-sm text-gray-600 mt-2">
               クリックすると新しいタブで開きます
