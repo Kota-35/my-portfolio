@@ -10,7 +10,8 @@ import {
   FaChartLine,
   FaRobot,
   FaLaptopCode,
-  FaMobile
+  FaMobile,
+  FaTasks
 } from "react-icons/fa"
 
 // アイコンマッピング
@@ -20,7 +21,8 @@ const iconMap = {
   FaRobot,
   FaCode,
   FaLaptopCode,
-  FaMobile
+  FaMobile,
+  FaTasks
 }
 
 // カラーマッピング
